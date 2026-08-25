@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAKROFANTASY</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <!-- LADO IZQUIERDO: LOGO -->
+    <div class="header-brand">
+        <h1>
+            <span class="logo-makro">Makro</span><span class="logo-fantasy">Fantasy</span>
+        </h1>
+        <p>Calidad al Por Mayor,  Magia al <span class="lema">Detalle</span>!</p>   
+          <h3>CATALOGO</h3>
+    </div>
+
+    <!-- LADO DERECHO: ACCIONES DERECHA -->
+    <div class="header-actions">
+        <!-- Campo de Búsqueda -->
+        <input type="text" id="buscador" placeholder="Buscar..." autocomplete="off">
+
+        <!-- Selector de Categoría compacto -->
+        <select id="filtro-categoria" class="select-categoria">
+            <option value="todos">Todas</option>
+            <option value="Hogar">Hogar</option>
+            <option value="Tecnología">Tecno</option>
+            <option value="Belleza">Belleza</option>
+        </select>
+    </div>
+</header>
+
+<!-- CONTENEDOR PRINCIPAL DEL CATÁLOGO (SCROLL VERTICAL) -->
+    <main id="catalogo-container" class="catalogo-container">
+        <!-- Tarjeta de Producto 1 -->
+        <article class="producto-card" data-categoria="Belleza">
+            <!-- CONTENEDOR DESLIZABLE DE IMÁGENES -->
+    <div class="producto-img-container">
+        <div class="galeria-slider">
+            <img src="img/ZZ-420_cajauñasdama_1.webp" alt="Caja de Uñas" class="producto-img">
+            <img src="img/ZZ-420_cajauñasdama_2.webp" alt="Caja de Uñas" class="producto-img">
+            <img src="img/ZZ-420_cajauñasdama_3.webp" alt="Caja de Uñas" class="producto-img">
+        </div>
+        <!-- Indicadores de fotos (Dots) -->
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+    </div>
+Paso 2: Agregar los estilos en styles.css
+            <div class="producto-info">
+                <span class="categoria-tag">Belleza</span>
+                <h3>Caja De Uñas Postisas</h3>
+                <p class="descripcion">Manicura natural en 2 minutos, esta caja de Uñas postisas, contiene 12 piezas decoradas</p>
+                <div class="precio-row">
+                    <span class="precio"><span class="moneda">COP</span>$6.000<span class="venta">Detal</span></span>
+                    <span class="precio"><span class="moneda">COP</span>$3.400<span class="venta">Por Mayor 3 Unid. o Mas</span></span>
+                    <a href="https://wa.me/573000000000" target="_blank" class="btn-whatsapp">Pedir</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- SEGUNDA TARJETA DE EJEMPLO -->
+        <article class="producto-card" data-categoria="Belleza">
+            
+            <div class="galeria-slider">
+                <img src="img/ZZ-421_cajauñasniña_1.webp" alt="uñas postisas niña" class="producto-img">
+                <img src="img/ZZ-421_cajauñasniña_2.webp" alt="uñas postisas niña" class="producto-img">
+                <img src="img/ZZ-421_cajauñasniña_3.webp" alt="uñas postisas niña" class="producto-img">
+                <img src="img/ZZ-421_cajauñasniña_4.webp" alt="uñas postisas niña" class="producto-img">
+            </div>
+
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+
+            <div class="producto-info">
+                <span class="categoria-tag">Belleza</span>
+                <h3>Caja De Uñas Postisas</h3>
+                <p class="descripcion">Manicura natural en 2 minutos, esta caja de Uñas postisas, contiene 12 piezas decoradas</p>
+                <div class="precio-row">
+                    <span class="precio"><span class="moneda">COP</span>$6.000<span class="venta">Detal</span></span>
+                    <span class="precio"><span class="moneda">COP</span>$3.400<span class="venta">Por Mayor 3 Unid. o Mas</span></span>
+                    <a href="https://wa.me/573000000000" target="_blank" class="btn-whatsapp">Pedir</a>
+                </div>
+            </div>
+
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
