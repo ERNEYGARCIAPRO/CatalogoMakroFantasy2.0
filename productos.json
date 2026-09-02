@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "titulo": "Caja de Uñas Postisas Dama",
+        "categoria": "Belleza",
+        "descripcion": "Caja de uñas postisas para dama, contiene 12 unidades decoradas y lamina adhesiva",
+        "minimo": 3,
+        "precio": 6000,
+        "mayor": 3400,
+        "imagenes": [
+            "img/ZZ-420_cajauñasdama_1.webp",
+            "img/ZZ-420_cajauñasdama_2.webp",
+            "img/ZZ-420_cajauñasdama_3.webp"
+        ],
+        "destacado": true
+    },
+    {
+        "id": 2,
+        "titulo": "Caja de Uñas Postisas Niña",
+        "categoria": "Belleza",
+        "descripcion": "Caja de uñas postisas para niña, contiene 12 unidades decoradas y lamina adhesiva",
+        "minimo": 3,
+        "precio": 5500,
+        "mayor": 2800,
+        "imagenes": [
+            "img/ZZ-421_cajauñasniña_1.webp",
+            "img/ZZ-421_cajauñasniña_2.webp",
+            "img/ZZ-421_cajauñasniña_3.webp",
+            "img/ZZ-421_cajauñasniña_4.webp"
+
+        ],
+        "destacado": true
+    }   
+]
