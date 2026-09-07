@@ -76,20 +76,25 @@ function renderizarProductos(listaProductos) {
         tarjeta.setAttribute('data-categoria', prod.categoria);
 
         tarjeta.innerHTML = `
-            <div class="galeria-slider">
-                ${imgsHTML}
-            </div>
-            ${dotsHTML}
-            <div class="producto-info">
-                <h3 class="titulo-producto">${prod.titulo}</h3>
-                <p class="descripcion">${prod.descripcion}</p>
-                <div class="precio-row">
-                    <span class="precio">${formatearPrecio(prod.precio)} <span class="moneda">COP</span><span class="venta">Detal</span></span>
-                    <span class="precio">${formatearPrecio(prod.mayor)} <span class="moneda">COP</span><span class="venta">Mayor a ${prod.minimo} unid. o mas</span></span>
-                </div>
-            </div>
-        `;
-
+    <div class="galeria-slider">
+        ${imgsHTML}
+    </div>
+    ${dotsHTML}
+    <div class="producto-info">
+        <h3 class="titulo-producto">${prod.titulo}</h3>
+        <p class="descripcion">${prod.descripcion}</p>
+        <div class="precio-row">
+            
+            <span class="precio">${formatearPrecio(prod.precio)} <span class="moneda">COP</span> <span class="venta">Detal</span></span>
+            <span class="precio">${formatearPrecio(prod.mayor)} <span class="moneda">COP</span> <span class="venta">Mayor a ${prod.minimo} unid.</span></span>        
+            <!-- BOTÓN FLOTANTE DEL CARRITO -->
+            <button id="btn-carrito" class="btn-carrito-flotante" aria-label="Ver carrito de compras onclick="agregarAlCarrito(${prod.id})">
+                    <span class="icono-carrito">🛒</span>
+                    <span id="carrito-contador" class="carrito-contador">0</span>
+            </button>
+        </div>
+    </div>
+`;
         contenedor.appendChild(tarjeta);
     });
 

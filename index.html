@@ -44,6 +44,33 @@
     </div>
     </main>
 
+    <!-- BOTÓN FLOTANTE DEL CARRITO -->
+    
+    <!-- PANEL LATERAL DEL CARRITO -->
+    <aside id="panel-carrito" class="panel-carrito" aria-hidden="true">
+        <div class="carrito-header">
+            <h2>Tu Carrito</h2>
+            <button id="cerrar-carrito" class="btn-cerrar-carrito" aria-label="Cerrar carrito">&times;</button>
+        </div>
+        
+        <div id="carrito-items" class="carrito-body">
+            <!-- Los productos agregados se renderizarán dinámicamente aquí -->
+        </div>
+
+        <div class="carrito-footer">
+            <div class="carrito-total">
+                <span>Total estimado:</span>
+                <span id="carrito-total-precio">$0 COP</span>
+            </div>
+            <button id="btn-enviar-whatsapp" class="btn-enviar-wa">
+                Pedir por WhatsApp
+            </button>
+        </div>
+    </aside>
+
+    <!-- CAPA OSCURA DE FONDO (OVERLAY) -->
+    <div id="carrito-overlay" class="carrito-overlay"></div>
+
     <script src="script.js"></script>
 
 </body>

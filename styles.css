@@ -283,7 +283,7 @@ header .header-actions {
 }
 .precio-row {
     display: grid;
-    grid-template-columns: 1fr 2fr 0.5fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -396,4 +396,52 @@ header .header-actions {
     width: 18px;
     border-radius: 10px;
     box-shadow: 0 0 8px #38bdf8;
+}
+
+/* ==========================================
+   CARRITO DE COMPRAS - ESTILOS
+   ========================================== */
+
+/* 1. Botón Flotante del Carrito */
+.btn-carrito-flotante {
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #00f0ff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-carrito-flotante:active {
+    transform: scale(0.95);
+}
+
+.icono-carrito {
+    font-size: 1.6rem;
+}
+
+.carrito-contador {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: #ff0055;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000000;
 }
