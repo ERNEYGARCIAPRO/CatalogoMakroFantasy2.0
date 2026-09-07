@@ -186,6 +186,29 @@ header .header-actions {
     transition: all 0.3s ease;
 }
 
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Desactivado cuando está oculto */
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Activo al abrirse */
+}
+
 /* CONTENEDOR DE LA IMAGEN SIN RESTRICCIONES DE ANCHO */
 .producto-img-container {
     width: 100%; /* Toma todo el ancho de la tarjeta (100vw) */

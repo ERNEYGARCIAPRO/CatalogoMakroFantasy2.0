@@ -11,10 +11,9 @@ async function cargarProductosJSON() {
         
         productos = await respuesta.json();
         
-        // Renderizar la lista inicial y activar funcionalidades
+        // Renderizar productos e inicializar los filtros una vez cargada la lista
         renderizarProductos(productos);
         inicializarFiltros();
-        inicializarLightbox();
     } catch (error) {
         console.error('Error:', error);
         const contenedor = document.getElementById('catalogo-container');
@@ -27,7 +26,6 @@ async function cargarProductosJSON() {
         }
     }
 }
-
 // ==========================================
 // 2. FORMATO Y RENDERIZADO DE TARJETAS
 // ==========================================
@@ -157,45 +155,39 @@ function inicializarFiltros() {
     if (selectCategoria) selectCategoria.addEventListener('change', filtrar);
 }
 
-// ==========================================
-// 5. LIGHTBOX (VISTA LIMPIA A PANTALLA COMPLETA)
+// =========================================
+// 5. LIGHTBOX GLOBAL (DELEGACIÓN DE EVENTOS)
 // ==========================================
 function inicializarLightbox() {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.querySelector('.lightbox-close');
-    const catalogoContainer = document.getElementById('catalogo-container');
 
-    const abrirLightbox = (src) => {
-        if (!lightbox || !lightboxImg) return;
-        lightboxImg.src = src;
-        lightbox.classList.add('active');
-    };
+    if (!lightbox || !lightboxImg) return;
 
-    const cerrarLightbox = () => {
-        if (!lightbox) return;
-        lightbox.classList.remove('active');
-    };
+    document.addEventListener('click', (e) => {
+        // Al presionar sobre cualquier imagen de producto
+        if (e.target.classList.contains('producto-img')) {
+            e.stopPropagation();
+            lightboxImg.src = e.target.src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            return;
+        }
 
-    if (catalogoContainer) {
-        catalogoContainer.addEventListener('click', (e) => {
-            if (e.target.classList.contains('producto-img')) {
-                abrirLightbox(e.target.src);
+        // Al presionar para cerrar el lightbox abierto
+        if (lightbox.classList.contains('active')) {
+            if (e.target.classList.contains('lightbox-close') || e.target === lightbox || e.target === lightboxImg) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
             }
-        });
-    }
-
-    if (lightboxClose) lightboxClose.addEventListener('click', cerrarLightbox);
-    if (lightbox) {
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) cerrarLightbox();
-        });
-    }
+        }
+    });
 }
 
 // ==========================================
-// INICIALIZACIÓN GENERAL AL CARGAR EL DOM
+// INICIALIZACIÓN GENERAL
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
+    inicializarLightbox();
     cargarProductosJSON();
 });
