@@ -445,3 +445,37 @@ header .header-actions {
     justify-content: center;
     border: 2px solid #000000;
 }
+
+/* Botón fijado a la derecha */
+.btn-agregar-carrito {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #00f0ff;
+    border: 1.5px solid #00f0ff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: end; /* Alineación perfecta a la derecha en CSS Grid */
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.25);
+    padding: 10px;
+}
+
+/* Efecto al presionar o pasar el cursor */
+.btn-agregar-carrito:hover {
+    background-color: rgba(0, 240, 255, 0.15);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    transform: scale(1.08);
+}
+
+.btn-agregar-carrito:active {
+    background-color: #00f0ff;
+    color: #000000;
+    transform: scale(0.95);
+}
