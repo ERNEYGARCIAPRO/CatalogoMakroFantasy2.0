@@ -9,13 +9,21 @@
 <body>
 
 <header class="header">
-    <!-- LADO IZQUIERDO: LOGO -->
+    <!-- LADO IZQUIERDO: LOGO Y CARRITO-->
     <div class="header-brand">
-        <h1>
-            <span class="logo-makro">Makro</span><span class="logo-fantasy">Fantasy</span>
-        </h1>
-        <p>Calidad al Por Mayor,  Magia al <span class="lema">Detalle</span>!</p>   
-          <h3>CATALOGO</h3>
+        <!-- BOTÓN FLOTANTE DEL CARRITO -->
+        <button id="btn-carrito" class="btn-carrito-flotante" title="Ver Carrito">
+        🛒
+        <span id="carrito-contador">0</span>
+        </button>
+        <!-- BLOQUE DE TEXTO DEL LOGO -->
+        <div class="brand-text">
+            <h1>
+                <span class="logo-makro">Makro</span><span class="logo-fantasy">Fantasy</span>
+            </h1>
+            <p>Calidad al Por Mayor, Magia al <span class="lema">Detalle</span>!</p>    
+            <h3>CATÁLOGO</h3>
+        </div>
     </div>
 
     <!-- LADO DERECHO: ACCIONES DERECHA -->
@@ -32,7 +40,7 @@
         </select>
     </div>
 </header>
-<!-- CONTENEDOR PRINCIPAL (SE LLENA DINOÁMICAMENTE DESDE JS) -->
+<!-- CONTENEDOR PRINCIPAL (SE LLENA DINÁMICAMENTE DESDE JS) -->
     <main id="catalogo-container" class="catalogo-container">
         <!-- Las tarjetas se generan automáticamente aquí -->
     </main>
@@ -43,8 +51,6 @@
         <img id="lightbox-img" src="" alt="Vista ampliada">
     </div>
     </main>
-
-    <!-- BOTÓN FLOTANTE DEL CARRITO -->
     
     <!-- PANEL LATERAL DEL CARRITO -->
     <aside id="panel-carrito" class="panel-carrito" aria-hidden="true">
